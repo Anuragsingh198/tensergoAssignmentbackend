@@ -1,5 +1,7 @@
 const axios = require('axios');
 require("dotenv").config();
+
+const INTERCOM_ACCESS_TOKEN = process.env.INTERCOM_ACCESS_TOKEN
 const sendMessageToIntercom = async ({ email, message }) => {
     console.log(email)
     console.log(message)
@@ -12,7 +14,7 @@ const sendMessageToIntercom = async ({ email, message }) => {
         },
         {
           headers: {
-            Authorization: `Bearer dG9rOmEyNTZjNjRlXzA3NmVfNDY5NV9hYzVjXzRjNzNhNTllODhlMzoxOjA=`,
+            Authorization: `Bearer ${INTERCOM_ACCESS_TOKEN}`,
             'Content-Type': 'application/json',
           },
         }
